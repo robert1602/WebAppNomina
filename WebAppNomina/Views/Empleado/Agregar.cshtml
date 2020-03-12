@@ -1,0 +1,49 @@
+﻿@using WebAppNomina.Models
+@model EmpleadoCLS
+@{
+    ViewBag.Title = "Agregar";
+}
+
+<h2>Agregar</h2>
+
+@using (Html.BeginForm("Agregar", "Empleado", FormMethod.Post))
+{
+
+
+    <div>
+        @Html.LabelFor(p => p.nombre)
+        @Html.TextBoxFor(p => p.nombre, new { @class = "form-control" })
+        @Html.ValidationMessage("nombre", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(p => p.apellido)
+        @Html.TextBoxFor(p => p.apellido, new { @class = "form-control" })
+        @Html.ValidationMessage("apellido", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(p => p.cod_empleado)
+        @Html.TextBoxFor(p => p.cod_empleado, new { @class = "form-control" })
+        @Html.ValidationMessage("cod_empleado", new { @class = "text-danger" })
+    </div>
+
+    <div>
+        @Html.LabelFor(p => p.area)
+        @Html.TextBoxFor(p => p.area, new { @class = "form-control" })
+        @Html.ValidationMessage("area", new { @class = "text-danger" })
+    </div>
+    <div>
+        @Html.LabelFor(p => p.Id_grupo)
+        @Html.TextBoxFor(p => p.Id_grupo, new { @class = "form-control" })
+        @Html.ValidationMessage("Id_grupo", new { @class = "text-danger" })
+    </div>
+    <br />
+    <div style="margin:auto">
+        <input type="submit" class="btn btn-primary" value="Guardar" />
+
+    </div>
+
+}
+
+

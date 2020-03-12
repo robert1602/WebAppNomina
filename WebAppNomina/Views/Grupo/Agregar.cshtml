@@ -1,0 +1,34 @@
+﻿@using WebAppNomina.Models
+@model GrupoCLS
+
+@{
+    ViewBag.Title = "Agregar";
+}
+
+<h2>Agregar</h2>
+
+<div class="row">
+    <div class="col-md-6">
+
+        @using (Html.BeginForm("Agregar", "GrupoController", FormMethod.Post))
+        {
+            <div>
+                @Html.LabelFor(p => p.nomb_grupo)
+                @Html.TextBoxFor(p => p.nomb_grupo, new { @class = "Form-control" })
+                @Html.ValidationMessage("nomb_grupo", new { @class = "text-danger" })
+            </div>
+            <br />
+            <div>
+                @Html.LabelFor(p => p.cod_grupo)
+                @Html.TextBoxFor(p => p.cod_grupo, new { @class = "Form-control" })
+                @Html.ValidationMessage("cod_grupo", new { @class = "text-danger" })
+            </div>
+            <br />
+
+            <div style="margin:auto">
+                <input type="submit" class="btn btn-primary" value="Guardar" />
+            </div>
+        }
+
+    </div>
+</div>

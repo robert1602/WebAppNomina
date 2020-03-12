@@ -1,0 +1,40 @@
+﻿@using WebAppNomina.Models
+@model List<EmpleadoCLS>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@Html.ActionLink("Agregar", "Agregar", null, new {@class="btn btn-primary" })
+
+  <table class="table table-bordered table-hover">
+      <thead>
+          <tr>
+
+              <td>@Html.LabelFor(p=>Model[0].Id_empleado)</td>
+              <td>@Html.LabelFor(p=>Model[0].nombre)</td>
+              <td>@Html.LabelFor(p=>Model[0].apellido)</td>
+              <td>@Html.LabelFor(p=>Model[0].cod_empleado)</td>
+              <td>@Html.LabelFor(p=>Model[0].area)</td>
+          </tr>
+      </thead>
+
+      <tbody>
+
+          @foreach (var item in Model)
+          {
+              <tr>
+                  <td>@item.Id_empleado</td>
+                  <td>@item.nombre</td>
+                  <td>@item.apellido</td>
+                  <td>@item.cod_empleado</td>
+                  <td>@item.area</td>
+              </tr>
+          }
+
+      </tbody>
+
+       
+  </table>
